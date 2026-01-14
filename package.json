@@ -1,0 +1,51 @@
+{
+  "name": "tnkb-client",
+  "version": "1.0.0",
+  "description": "Indonesian vehicle registration number (TNKB) decoder and validator",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "build": "tsc",
+    "prepublishOnly": "npm run lint && npm test"
+  },
+  "keywords": [
+    "tnkb",
+    "vehicle",
+    "registration",
+    "plate",
+    "indonesia",
+    "nopol",
+    "decoder"
+  ],
+  "author": "nulsec",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nulsec/tnkb-detail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nulsec/tnkb-detail/issues"
+  },
+  "homepage": "https://github.com/nulsec/tnkb-detail#readme",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "prettier": "^2.8.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
