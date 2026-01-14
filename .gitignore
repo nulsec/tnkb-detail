@@ -1,0 +1,97 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# API Keys and Secrets
+*.key
+*.secret
+secrets.txt
+api_keys.txt
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.coverage
+.env.test
+
+# Node/TypeScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+out/
+.nuxt/
+dist/
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+dist
+.turbo
+
+# PHP
+vendor/
+composer.lock
+.php_cs.cache
+.phpdoc/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Misc
+*.bak
+*.tmp
+*.swp
+temp/
+tmp/
