@@ -53,11 +53,11 @@ class TNKBClient:
             timeout: Request timeout in seconds (default: 10)
             max_retries: Number of retries for failed requests (default: 3)
             verify_ssl: Verify SSL certificates (default: True)
-            api_key: Optional API key for authenticated requests
+            rapidapi_key: Optional RapidAPI key for authenticated requests
         """
         self.timeout = timeout
         self.verify_ssl = verify_ssl
-        self.api_key = api_key
+        self.rapidapi_key = rapidapi_key
         
         # Setup session with retries
         self.session = requests.Session()
