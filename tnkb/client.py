@@ -31,9 +31,9 @@ class TNKBClient:
     """
     
     # API Endpoints
-    API_BASE_URL = "https://jojapi.com/api"
-    CHECK_KENDARAAN_ENDPOINT = f"{API_BASE_URL}/check-kendaraan-indonesia"
-    CEK_NOPOL_ENDPOINT = f"{API_BASE_URL}/cek-nopol-indonesia"
+    API_BASE_URL = "https://cek-nopol-kendaraan.p.rapidapi.com"
+    CHECK_KENDARAAN_ENDPOINT = f"{API_BASE_URL}/check"
+    CEK_NOPOL_ENDPOINT = f"{API_BASE_URL}/check"
     
     # Plate validation regex
     # Format: [LETTER] [1-4 DIGITS] [LETTER(S)]
@@ -44,7 +44,7 @@ class TNKBClient:
         timeout: int = 10,
         max_retries: int = 3,
         verify_ssl: bool = True,
-        api_key: Optional[str] = None,
+        rapidapi_key: Optional[str] = None,
     ):
         """
         Initialize TNKB Client
@@ -75,11 +75,12 @@ class TNKBClient:
         self.session.headers.update({
             'User-Agent': 'TNKBClient/1.0.0 (Python)',
             'Content-Type': 'application/json',
+            'X-RapidAPI-Host': 'cek-nopol-kendaraan.p.rapidapi.com',
         })
         
-        if self.api_key:
+        if self.rapidapi_key:
             self.session.headers.update({
-                'Authorization': f'Bearer {self.api_key}'
+                'X-RapidAPI-Key': self.rapidapi_key
             })
     
     def check_plate(self, plate_number: str) -> VehicleInfo:

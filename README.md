@@ -356,7 +356,7 @@ const client = new TNKBClient({
   timeout: 15000,        // milliseconds
   maxRetries: 5,
   apiKey: 'optional-key',
-  baseUrl: 'https://jojapi.com/api'
+  baseUrl: 'https://cek-nopol-kendaraan.p.rapidapi.com'
 });
 ```
 

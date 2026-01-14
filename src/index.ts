@@ -140,23 +140,24 @@ export class TNKBClient {
       timeout = 10000,
       maxRetries = 3,
       apiKey,
-      baseUrl = 'https://jojapi.com/api',
+      baseUrl = 'https://cek-nopol-kendaraan.p.rapidapi.com',
     } = config;
 
     this.apiBaseUrl = baseUrl;
-    this.checkKendaraanEndpoint = `${this.apiBaseUrl}/check-kendaraan-indonesia`;
-    this.cekNopolEndpoint = `${this.apiBaseUrl}/cek-nopol-indonesia`;
+    this.checkKendaraanEndpoint = `${this.apiBaseUrl}/check`;
+    this.cekNopolEndpoint = `${this.apiBaseUrl}/check`;
 
     this.axiosInstance = axios.create({
       timeout,
       headers: {
         'User-Agent': 'TNKBClient/1.0.0 (JavaScript)',
         'Content-Type': 'application/json',
+        'X-RapidAPI-Host': 'cek-nopol-kendaraan.p.rapidapi.com',
       },
     });
 
     if (apiKey) {
-      this.axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${apiKey}`;
+      this.axiosInstance.defaults.headers.common['X-RapidAPI-Key'] = apiKey;
     }
 
     // Add retry interceptor

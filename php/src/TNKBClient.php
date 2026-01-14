@@ -24,7 +24,7 @@ class ClientConfig
         ?int $timeout = 10,
         int $maxRetries = 3,
         ?string $apiKey = null,
-        string $baseUrl = 'https://jojapi.com/api'
+        string $baseUrl = 'https://cek-nopol-kendaraan.p.rapidapi.com'
     ) {
         $this->timeout = $timeout;
         $this->maxRetries = $maxRetries;
@@ -61,7 +61,7 @@ class TNKBClient
 
         try {
             $response = $this->callApi(
-                $this->config->baseUrl . '/check-kendaraan-indonesia',
+                $this->config->baseUrl . '/check',
                 ['nopol' => $normalized]
             );
 
@@ -217,10 +217,11 @@ class TNKBClient
         $headers = [
             'User-Agent' => 'TNKBClient/1.0.0 (PHP)',
             'Content-Type' => 'application/json',
+            'X-RapidAPI-Host' => 'cek-nopol-kendaraan.p.rapidapi.com',
         ];
 
         if ($this->config->apiKey) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->apiKey;
+            $headers['X-RapidAPI-Key'] = $this->config->apiKey;
         }
 
         return $headers;
